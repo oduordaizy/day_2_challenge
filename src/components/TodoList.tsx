@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 interface Task{
     text: string,
@@ -8,6 +8,17 @@ interface Task{
 const TodoList: React.FC = () => {
     const [tasks, setTasks] = useState<Task[]>([]);
     const [taskInput, setTaskInput] = useState<string>(""); //stores the users input
+
+    useEffect(() =>{
+        const savedTasks: Task[] = JSON.parse(localStorage.getItem("tasks") || "[]")
+        setTasks(savedTasks)
+    }, []);
+
+    useEffect(()=>{
+        if (tasks.length > 0) {
+        localStorage.setItem("tasks", JSON.stringify(tasks))
+        }
+    }, [tasks]);
 
     const addTask = (): void => {
         if (!taskInput.trim()) return;
