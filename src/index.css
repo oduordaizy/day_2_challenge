@@ -1,0 +1,64 @@
+body{
+    background-color: #d5eeff;
+}
+.todo{
+    background: white;
+    padding: 20px;
+    width: 70%;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.inputContainer{
+    display: flex;
+    gap: 10px;
+}
+
+.inputContainer input{
+   flex: 1;
+    width: 80%;
+    padding: 8px;  
+}
+.inputContainer button{
+    padding: 8px 12px;
+    border: none;
+    color: white;
+    background-color: #007cb9;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.inputContainer button:hover{
+    background-color: #005689;
+}
+
+.todo ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.todo li{   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.buttons{
+    display: flex;
+    gap: 5px;
+    
+}
+
+.buttons button:last-child{
+    background-color: #fc3a52;
+    color: white;
+    border: none;
+}
+
+li.completed span{
+    text-decoration: line-through;
+    color: gray;
+}
+
+/*********Todo End *******************/
