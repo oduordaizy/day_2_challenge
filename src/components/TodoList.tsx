@@ -35,7 +35,10 @@ const TodoList: React.FC = () => {
         );
         setTasks(newTasks)
     }
-
+    const deleteTask = (index: number):void=>{
+        const newTasks = tasks.filter((_, i) => i !== index)
+        setTasks(newTasks)
+    }
 
   return (
     <div className='todo'>
@@ -56,7 +59,7 @@ const TodoList: React.FC = () => {
                     <span>{task.text}</span>
                     <div className='buttons'>
                         <button onClick={() => toggleTask(index)}>✔</button>
-                        <button>✖</button>
+                        <button onClick={() => deleteTask(index)}>✖</button>
                     </div>
                 </li>
 
